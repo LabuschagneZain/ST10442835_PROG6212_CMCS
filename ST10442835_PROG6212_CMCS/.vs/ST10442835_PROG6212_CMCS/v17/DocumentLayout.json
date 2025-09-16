@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs\\st10442835_prog6212_cmcs\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs\\st10442835_prog6212_cmcs\\controllers\\approvalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|solutionrelative:controllers\\approvalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs\\st10442835_prog6212_cmcs\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -31,14 +39,6 @@
       "RelativeMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs\\st10442835_prog6212_cmcs\\controllers\\approvalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|solutionrelative:controllers\\approvalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs\\st10442835_prog6212_cmcs\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs\\st10442835_prog6212_cmcs\\controllers\\lecturercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|solutionrelative:controllers\\lecturercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -54,11 +54,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
@@ -70,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
@@ -82,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ManagementIndex.cshtml",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Views\\Dashboard\\ManagementIndex.cshtml",
               "RelativeDocumentMoniker": "Views\\Dashboard\\ManagementIndex.cshtml",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "LecturerIndex.cshtml",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Views\\Dashboard\\LecturerIndex.cshtml",
               "RelativeDocumentMoniker": "Views\\Dashboard\\LecturerIndex.cshtml",
@@ -106,20 +106,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Login\\Index.cshtml",
               "ToolTip": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Views\\Login\\Index.cshtml",
               "RelativeToolTip": "Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAABkAAAAAAAAAAAAuwDEAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwDAAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-16T06:55:51.868Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -131,27 +131,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAAkAAABkAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACkAAACVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-11T09:35:13.815Z"
+              "WhenOpened": "2025-09-11T09:35:13.815Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "ApprovalController.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Controllers\\ApprovalController.cs",
               "RelativeDocumentMoniker": "Controllers\\ApprovalController.cs",
               "ToolTip": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Controllers\\ApprovalController.cs",
               "RelativeToolTip": "Controllers\\ApprovalController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T09:32:28.213Z"
+              "WhenOpened": "2025-09-11T09:32:28.213Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -179,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",

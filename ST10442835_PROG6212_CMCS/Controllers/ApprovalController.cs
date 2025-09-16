@@ -4,7 +4,7 @@ namespace ST10442835_PROG6212_CMCS.Controllers
 {
     public class ApprovalController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index() 
         {
             return View();
         }
