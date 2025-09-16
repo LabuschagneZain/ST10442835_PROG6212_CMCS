@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "ST10442835_PROG6212_CMCS/1.0.0": {
+        "runtime": {
+          "ST10442835_PROG6212_CMCS.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ST10442835_PROG6212_CMCS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
