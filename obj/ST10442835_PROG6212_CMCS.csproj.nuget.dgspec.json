@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zainl\\OneDrive\\Desktop\\BUp\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj": {}
+    "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zainl\\OneDrive\\Desktop\\BUp\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj": {
+    "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zainl\\OneDrive\\Desktop\\BUp\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj",
+        "projectUniqueName": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj",
         "projectName": "ST10442835_PROG6212_CMCS",
-        "projectPath": "C:\\Users\\zainl\\OneDrive\\Desktop\\BUp\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj",
+        "projectPath": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj",
         "packagesPath": "C:\\Users\\zainl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zainl\\OneDrive\\Desktop\\BUp\\ST10442835_PROG6212_CMCS\\obj\\",
+        "outputPath": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

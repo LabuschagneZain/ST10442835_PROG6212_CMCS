@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m9B8H1FPYp8=",
+  "dgSpecHash": "PDBl7CwQSQ0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\zainl\\OneDrive\\Desktop\\BUp\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj",
+  "projectFilePath": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\ST10442835_PROG6212_CMCS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zainl\\.nuget\\packages\\azure.core\\1.47.3\\azure.core.1.47.3.nupkg.sha512",
     "C:\\Users\\zainl\\.nuget\\packages\\azure.data.tables\\12.11.0\\azure.data.tables.12.11.0.nupkg.sha512",

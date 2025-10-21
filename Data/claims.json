@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "9628e92f-684e-4fa4-817d-2e89e9cc0fc7",
+    "LecturerName": "lecturer",
+    "Month": "July",
+    "HoursWorked": 10,
+    "HourlyRate": 100,
+    "Status": "Approved",
+    "DocumentUrl": "bf3aa867-cda1-47ab-9567-2bd8547c9c78_ABCRetailers - OrderController Code Snapshots.pdf",
+    "DocumentFileName": "ABCRetailers - OrderController Code Snapshots.pdf",
+    "CreatedDate": "2025-10-21T19:14:59.0906197Z",
+    "Notes": "Helppp",
+    "DocumentFile": null,
+    "TotalAmount": 1000
+  },
+  {
+    "Id": "df8365d3-13ca-4899-b5a2-428c1f22daf4",
+    "LecturerName": "management",
+    "Month": "August",
+    "HoursWorked": 12,
+    "HourlyRate": 200,
+    "Status": "Approved",
+    "DocumentUrl": "",
+    "DocumentFileName": "",
+    "CreatedDate": "2025-10-21T19:15:32.310474Z",
+    "Notes": "rthhrehrt",
+    "DocumentFile": null,
+    "TotalAmount": 2400
+  },
+  {
+    "Id": "4a4c5a1e-85c0-4ced-965a-fa96e1d238ac",
+    "LecturerName": "management",
+    "Month": "June",
+    "HoursWorked": 45,
+    "HourlyRate": 200,
+    "Status": "Rejected",
+    "DocumentUrl": "a228a21b-4dbc-4905-90b3-d38caa425ff3_ABCRetailers - OrderController Code Snapshots.pdf",
+    "DocumentFileName": "ABCRetailers - OrderController Code Snapshots.pdf",
+    "CreatedDate": "2025-10-21T19:15:45.7688979Z",
+    "Notes": "ty54y24",
+    "DocumentFile": null,
+    "TotalAmount": 9000
+  },
+  {
+    "Id": "3f198607-6b9d-4233-a7f5-e21c38d8d662",
+    "LecturerName": "lecturer",
+    "Month": "May",
+    "HoursWorked": 12,
+    "HourlyRate": 200,
+    "Status": "Rejected",
+    "DocumentUrl": "",
+    "DocumentFileName": "",
+    "CreatedDate": "2025-10-21T19:17:08.2849648Z",
+    "Notes": "tgrthrhw",
+    "DocumentFile": null,
+    "TotalAmount": 2400
+  }
+]

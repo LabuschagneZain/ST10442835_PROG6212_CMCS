@@ -9,146 +9,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manager Dashboard - CMCS</title>
+    <title>Management Dashboard - CMCS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
+        :root {
+            --primary-color: #007ACC;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --light-bg: #f8f9fa;
+        }
+
         body {
-            background-color: #f4f6f9;
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .navbar {
-            background-color: #007ACC;
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .navbar-brand, .nav-link {
             color: white !important;
+            font-weight: 600;
         }
 
         .card {
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: none;
         }
 
-        table th, table td {
-            vertical-align: middle;
+        .stats-card {
+            transition: transform 0.2s ease;
+        }
+
+            .stats-card:hover {
+                transform: translateY(-3px);
+            }
+
+        .table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            border: none;
         }
 
         .status-badge {
-            font-size: 0.9rem;
-            padding: 6px 12px;
-            border-radius: 8px;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 500;
         }
 
-        .status-pending {
-            background-color: #ffc107;
-            color: black;
+        .btn-action {
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            margin: 1px;
         }
 
-        .status-approved {
-            background-color: #28a745;
-            color: white;
+        .claim-row {
+            transition: background-color 0.2s ease;
         }
 
-        .status-rejected {
-            background-color: #dc3545;
-            color: white;
+            .claim-row:hover {
+                background-color: #f8f9fa;
+            }
+
+        .filter-badge {
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
+
+            .filter-badge.active {
+                transform: scale(1.05);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#">CMCS - Management</a>
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-building me-2"></i>
+                CMCS - Management Portal
+            </a>
             <div class="d-flex">
-                <a asp-controller="Home" asp-action="Index" class="btn btn-light btn-sm">Logout</a>
+                <span class="navbar-text text-white me-3">
+                    <i class="bi bi-person-gear me-1"></i>
+                    Manager
+                </span>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-light btn-sm">
+                    <i class="bi bi-box-arrow-right me-1"></i>Logout
+                </a>
             </div>
         </div>
     </nav>
 
     <div class="container mt-4">
-        <h3>Welcome, Manager</h3>
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3>
+                    <i class="bi bi-speedometer2 me-2 text-primary"></i>
+                    Management Dashboard
+                </h3>
+                <p class="text-muted">Review and manage all lecturer claims</p>
+            </div>
+        </div>
 
-        <div class="card p-4 mt-3">
-            <h5 class="mb-3 fw-semibold">Claims Overview</h5>
+        <!-- Statistics Cards -->
+        <div class="row mb-4">
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card bg-primary text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="mb-0">@Model?.Count</h4>
+                                <small>Total Claims</small>
+                            </div>
+                            <i class="bi bi-files display-6 opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card bg-warning text-dark">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="mb-0">@Model?.Count(c => c.Status == "Pending")</h4>
+                                <small>Pending Review</small>
+                            </div>
+                            <i class="bi bi-clock display-6 opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card bg-success text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="mb-0">@Model?.Count(c => c.Status == "Approved")</h4>
+                                <small>Approved</small>
+                            </div>
+                            <i class="bi bi-check-circle display-6 opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card bg-danger text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="mb-0">@Model?.Count(c => c.Status == "Rejected")</h4>
+                                <small>Rejected</small>
+                            </div>
+                            <i class="bi bi-x-circle display-6 opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <table class="table table-hover align-middle">
-                <thead class="table-light">
-                    <tr>
-                        <th>Lecturer</th>
-                        <th>Month</th>
-                        <th>Hours</th>
-                        <th>Rate</th>
-                        <th>Total</th>
-                        <th>Document</th>
-                        <th>Status</th>
-                        <th class="text-center">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (Model != null && Model.Any())
-                    {
-                        foreach (var claim in Model)
-                        {
-                            <tr>
-                                <td>Lecturer-Name</td>
-                                <td>@claim.Month</td>
-                                <td>@claim.HoursWorked</td>
-                                <td>@claim.HourlyRate.ToString("C")</td>
-                                <td>@claim.TotalAmount.ToString("C")</td>
-                                <td>
-                                    @if (!string.IsNullOrEmpty(claim.DocumentUrl))
-                                    {
-                                        <a asp-action="ViewDocument" asp-route-id="@claim.Id" class="text-decoration-none text-primary">View</a>
-                                    }
-                                    else
-                                    {
-                                        <span class="text-muted">No file</span>
-                                    }
-                                </td>
-                                <td>
-                                    @if (claim.Status == "Approved")
-                                    {
-                                        <span class="status-badge status-approved">Approved</span>
-                                    }
-                                    else if (claim.Status == "Rejected")
-                                    {
-                                        <span class="status-badge status-rejected">Rejected</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="status-badge status-pending">Pending</span>
-                                    }
-                                </td>
-                                <td class="text-center">
-                                    @if (claim.Status == "Pending")
-                                    {
-                                        <form asp-action="Approve" asp-controller="Claims" method="post" class="d-inline">
-                                            <input type="hidden" name="id" value="@claim.Id" />
-                                            <button type="submit" class="btn btn-success btn-sm">Approve</button>
-                                        </form>
-                                        <form asp-action="Reject" asp-controller="Claims" method="post" class="d-inline">
-                                            <input type="hidden" name="id" value="@claim.Id" />
-                                            <button type="submit" class="btn btn-danger btn-sm">Reject</button>
-                                        </form>
-                                    }
-                                    else
-                                    {
-                                        <span class="text-muted">No actions</span>
-                                    }
-                                </td>
-                            </tr>
-                        }
-                    }
-                    else
-                    {
-                        <tr>
-                            <td colspan="8" class="text-center text-muted">No claims submitted yet.</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+        <!-- Filter Section -->
+        <div class="row mb-3">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title mb-3">
+                            <i class="bi bi-funnel me-2"></i>Filter Claims
+                        </h6>
+                        <div class="d-flex flex-wrap gap-2" id="filterButtons">
+                            <span class="filter-badge badge bg-primary" data-status="all">All Claims</span>
+                            <span class="filter-badge badge bg-warning" data-status="pending">Pending</span>
+                            <span class="filter-badge badge bg-success" data-status="approved">Approved</span>
+                            <span class="filter-badge badge bg-danger" data-status="rejected">Rejected</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claims Table -->
+        <div class="card">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">
+                    <i class="bi bi-list-check me-2 text-primary"></i>
+                    Claims Overview
+                </h5>
+            </div>
+            <div class="card-body">
+                @if (Model != null && Model.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="claimsTable">
+                            <thead>
+                                <tr>
+                                    <th>Lecturer</th>
+                                    <th>Month</th>
+                                    <th>Hours</th>
+                                    <th>Rate</th>
+                                    <th>Total</th>
+                                    <th>Document</th>
+                                    <th>Status</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var claim in Model.OrderByDescending(c => c.CreatedDate))
+                                {
+                                    <tr class="claim-row" data-status="@claim.Status.ToLower()">
+                                        <td>
+                                            <strong>@claim.LecturerName</strong>
+                                            @if (!string.IsNullOrEmpty(claim.Notes))
+                                            {
+                                                <br />
+                                                <small class="text-muted" title="@claim.Notes">
+                                                    <i class="bi bi-chat-text"></i> Has notes
+                                                </small>
+                                            }
+                                        </td>
+                                        <td>@claim.Month</td>
+                                        <td>@claim.HoursWorked</td>
+                                        <td>@claim.HourlyRate.ToString("C")</td>
+                                        <td><strong>@claim.TotalAmount.ToString("C")</strong></td>
+                                        <td>
+                                            @if (!string.IsNullOrEmpty(claim.DocumentUrl))
+                                            {
+                                                <a asp-action="ViewDocument" asp-controller="Claims" asp-route-id="@claim.Id"
+                                                   class="btn btn-outline-primary btn-sm btn-action"
+                                                   target="_blank"
+                                                   title="View Document">
+                                                    <i class="bi bi-eye"></i> View
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-muted small">No file</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (claim.Status == "Approved")
+                                            {
+                                                <span class="status-badge bg-success text-white">
+                                                    <i class="bi bi-check-circle me-1"></i>Approved
+                                                </span>
+                                            }
+                                            else if (claim.Status == "Rejected")
+                                            {
+                                                <span class="status-badge bg-danger text-white">
+                                                    <i class="bi bi-x-circle me-1"></i>Rejected
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="status-badge bg-warning text-dark">
+                                                    <i class="bi bi-clock me-1"></i>Pending
+                                                </span>
+                                            }
+                                        </td>
+                                        <td class="text-center">
+                                            @if (claim.Status == "Pending")
+                                            {
+                                                <form asp-action="Approve" asp-controller="Claims" method="post" class="d-inline">
+                                                    <input type="hidden" name="id" value="@claim.Id" />
+                                                    <button type="submit" class="btn btn-success btn-sm btn-action"
+                                                            title="Approve Claim"
+                                                            onclick="return confirm('Are you sure you want to approve this claim?')">
+                                                        <i class="bi bi-check-lg"></i> Approve
+                                                    </button>
+                                                </form>
+                                                <form asp-action="Reject" asp-controller="Claims" method="post" class="d-inline">
+                                                    <input type="hidden" name="id" value="@claim.Id" />
+                                                    <button type="submit" class="btn btn-danger btn-sm btn-action"
+                                                            title="Reject Claim"
+                                                            onclick="return confirm('Are you sure you want to reject this claim?')">
+                                                        <i class="bi bi-x-lg"></i> Reject
+                                                    </button>
+                                                </form>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-muted small">No actions</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center text-muted py-5">
+                        <i class="bi bi-inbox display-4 text-light"></i>
+                        <h5 class="mt-3">No claims submitted yet</h5>
+                        <p>Claims will appear here once lecturers submit them</p>
+                    </div>
+                }
+            </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBadges = document.querySelectorAll('.filter-badge');
+            const claimRows = document.querySelectorAll('.claim-row');
+
+            filterBadges.forEach(badge => {
+                badge.addEventListener('click', function() {
+                    const status = this.getAttribute('data-status');
+
+                    // Update active filter
+                    filterBadges.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter rows
+                    claimRows.forEach(row => {
+                        if (status === 'all' || row.getAttribute('data-status') === status) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Set initial active filter
+            document.querySelector('.filter-badge[data-status="all"]').classList.add('active');
+        });
+    </script>
 </body>
 </html>

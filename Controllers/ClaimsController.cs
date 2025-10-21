@@ -6,56 +6,78 @@ namespace ST10442835_PROG6212_CMCS.Controllers
 {
     public class ClaimsController : Controller
     {
-        private readonly TableStorageService _tableStorageService;
-        private readonly BlobService _blobService;
+        private readonly IClaimService _claimService;
+        private readonly IFileStorageService _fileStorageService;
 
-        public ClaimsController(TableStorageService tableStorageService, BlobService blobService)
+        public ClaimsController(IClaimService claimService, IFileStorageService fileStorageService)
         {
-            _tableStorageService = tableStorageService ?? throw new ArgumentNullException(nameof(tableStorageService));
-            _blobService = blobService ?? throw new ArgumentNullException(nameof(blobService));
-        }
-
-        // GET: Lecturer Dashboard (fetch latest claims)
-        public async Task<IActionResult> LecturerIndex()
-        {
-            var lecturerName = User.Identity?.Name ?? "Unknown Lecturer";
-            var claims = await _tableStorageService.GetClaimsByLecturerAsync(lecturerName);
-            return View(claims); // pass claims to Razor view
+            _claimService = claimService;
+            _fileStorageService = fileStorageService;
         }
 
         // POST: Claims/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Claim claim)
+        public async Task<IActionResult> Create(string Month, int HoursWorked, double HourlyRate, string Notes, IFormFile DocumentFile)
         {
-            if (!ModelState.IsValid)
-            {
-                TempData["ErrorMessage"] = "Failed to submit claim. Please check your input.";
-                return RedirectToAction("LecturerIndex", "Dashboard");
-            }
-
             try
             {
-                string fileUrl = string.Empty;
-                if (claim.DocumentFile != null && claim.DocumentFile.Length > 0)
+                // Manual validation
+                if (string.IsNullOrEmpty(Month) || HoursWorked <= 0 || HourlyRate <= 0)
                 {
-                    fileUrl = await _blobService.UploadFileAsync(claim.DocumentFile);
+                    TempData["ErrorMessage"] = "Please fill in all required fields correctly.";
+                    return RedirectToAction("LecturerIndex", "Dashboard");
                 }
 
-                // Create a new Claim object for Table Storage, excluding IFormFile
+                string fileUrl = string.Empty;
+                string fileName = string.Empty;
+
+                if (DocumentFile != null && DocumentFile.Length > 0)
+                {
+                    // Validate file type
+                    var allowedExtensions = new[] { ".pdf", ".docx", ".xlsx" };
+                    var fileExtension = Path.GetExtension(DocumentFile.FileName).ToLower();
+                    if (!allowedExtensions.Contains(fileExtension))
+                    {
+                        TempData["ErrorMessage"] = "Only PDF, DOCX, and XLSX files are allowed.";
+                        return RedirectToAction("LecturerIndex", "Dashboard");
+                    }
+
+                    // Validate file size
+                    if (DocumentFile.Length > 5 * 1024 * 1024)
+                    {
+                        TempData["ErrorMessage"] = "File size cannot exceed 5MB.";
+                        return RedirectToAction("LecturerIndex", "Dashboard");
+                    }
+
+                    try
+                    {
+                        fileName = await _fileStorageService.UploadFileAsync(DocumentFile);
+                        fileUrl = fileName;
+                    }
+                    catch (Exception ex)
+                    {
+                        TempData["ErrorMessage"] = $"Error uploading file: {ex.Message}";
+                        return RedirectToAction("LecturerIndex", "Dashboard");
+                    }
+                }
+
+                // Create a new Claim object for storage
                 var storageClaim = new Claim
                 {
-                    RowKey = Guid.NewGuid().ToString(),
-                    LecturerName = User.Identity?.Name ?? "Unknown Lecturer",
-                    Month = claim.Month,
-                    HoursWorked = claim.HoursWorked,
-                    HourlyRate = claim.HourlyRate,
+                    Id = Guid.NewGuid().ToString(),
+                    LecturerName = HttpContext.Session.GetString("Username") ?? "Unknown Lecturer",
+                    Month = Month,
+                    HoursWorked = HoursWorked,
+                    HourlyRate = HourlyRate,
                     Status = "Pending",
                     DocumentUrl = fileUrl,
+                    DocumentFileName = DocumentFile?.FileName ?? string.Empty,
+                    Notes = Notes,
                     CreatedDate = DateTime.UtcNow
                 };
 
-                await _tableStorageService.AddClaimAsync(storageClaim);
+                await _claimService.AddClaimAsync(storageClaim);
 
                 TempData["SuccessMessage"] = "Claim submitted successfully!";
                 return RedirectToAction("LecturerIndex", "Dashboard");
@@ -73,17 +95,38 @@ namespace ST10442835_PROG6212_CMCS.Controllers
             if (string.IsNullOrEmpty(id))
                 return BadRequest("Invalid claim ID.");
 
-            var claims = await _tableStorageService.GetAllClaimsAsync();
-            var claim = claims.FirstOrDefault(c => c.Id == id);
+            var claim = await _claimService.GetClaimByIdAsync(id);
 
             if (claim == null || string.IsNullOrEmpty(claim.DocumentUrl))
                 return NotFound();
 
-            return Redirect(claim.DocumentUrl);
+            try
+            {
+                var fileBytes = await _fileStorageService.DownloadFileAsync(claim.DocumentUrl);
+                var contentType = GetContentType(claim.DocumentFileName);
+                return File(fileBytes, contentType, claim.DocumentFileName);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Error downloading file: {ex.Message}";
+                return RedirectToAction("LecturerIndex", "Dashboard");
+            }
         }
 
-        // Management actions - only for managers
+        private string GetContentType(string fileName)
+        {
+            var extension = Path.GetExtension(fileName).ToLower();
+            return extension switch
+            {
+                ".pdf" => "application/pdf",
+                ".docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                ".xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                _ => "application/octet-stream"
+            };
+        }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Approve(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -94,7 +137,7 @@ namespace ST10442835_PROG6212_CMCS.Controllers
 
             try
             {
-                await _tableStorageService.UpdateClaimStatusAsync(id, "Approved");
+                await _claimService.UpdateClaimStatusAsync(id, "Approved");
                 TempData["SuccessMessage"] = "Claim approved successfully!";
             }
             catch (Exception ex)
@@ -106,6 +149,7 @@ namespace ST10442835_PROG6212_CMCS.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Reject(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -116,7 +160,7 @@ namespace ST10442835_PROG6212_CMCS.Controllers
 
             try
             {
-                await _tableStorageService.UpdateClaimStatusAsync(id, "Rejected");
+                await _claimService.UpdateClaimStatusAsync(id, "Rejected");
                 TempData["SuccessMessage"] = "Claim rejected successfully!";
             }
             catch (Exception ex)
