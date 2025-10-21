@@ -1,25 +1,37 @@
-Contract Monthly Claim System (CMCS)
+# CMCS Lecturer Claim Management System
 
-Overview
+## Overview
 
-The system is a prototype web application designed to streamline the submission, reviewing, and approval of lecturer claims. It simplifies communication between lecturers and management by providing an intuitive platform for claim submissions and approvals.
+The CMCS Lecturer Claim Management System is a web application built with **ASP.NET Core MVC** that allows lecturers to submit claims for hours worked. Claims can include uploaded supporting documents (PDFs, images, etc.), which are stored in **Azure Blob Storage**. Claim data is stored in **Azure Table Storage**, and lecturers can view their submitted claims with their current status. Managers can approve or reject claims.
 
-Features
-Role-based Dashboards
+---
 
-1.Lecturers can submit claims with supporting documents and track their claim statuses.
+## Features
 
-2.Managers can review, approve, or reject submitted claims.
+- Lecturer dashboard for submitting new claims
+- Upload supporting documents to Azure Blob Storage
+- View previously submitted claims
+- Management dashboard for approving/rejecting claims
+- Claims stored in Azure Table Storage for persistence
+- Session-based user identity management
+- Responsive interface using Bootstrap 5
 
+---
 
-Claims Management
+## Technologies Used
 
-Submit new claims with details (month, hours worked, rate, and documents).
+- **ASP.NET Core MVC** (.NET 7)
+- **Azure Blob Storage** – for storing uploaded files
+- **Azure Table Storage** – for storing claim metadata
+- **Bootstrap 5** – for UI styling
+- **C# 11** – backend logic
+- **Visual Studio 2022** – development environment
 
-View status of submitted claims.
+---
 
-Managers can access and review supporting documents before approving/rejecting.
+## Prerequisites
 
-Lecturer Dashboard: Submit claims and view submitted claim history.
-
-Manager Dashboard: Review, approve, or reject claims with access to supporting documents.
+- Visual Studio 2022 or later
+- .NET 7 SDK
+- Azure Storage Account (with Blob and Table Storage)
+- Internet connection for CDN (Bootstrap)
