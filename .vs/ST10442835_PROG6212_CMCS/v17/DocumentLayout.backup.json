@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6C6E814E-856C-48C6-9F8C-5132751C01A0}|..\\ST10442835_PROG6212_CMCS.Tests\\ST10442835_PROG6212_CMCS.Tests.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs.tests\\claimtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs\\views\\dashboard\\coordinatorindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|solutionrelative:views\\dashboard\\coordinatorindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -53,9 +56,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{479BAF24-C41F-4B83-B20D-19693E22E038}|ST10442835_PROG6212_CMCS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C6E814E-856C-48C6-9F8C-5132751C01A0}|..\\ST10442835_PROG6212_CMCS.Tests\\ST10442835_PROG6212_CMCS.Tests.csproj|c:\\users\\zainl\\onedrive\\desktop\\st10442835_prog6212_cmcs.tests\\claimtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -65,11 +65,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CoordinatorIndex.cshtml",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Views\\Dashboard\\CoordinatorIndex.cshtml",
               "RelativeDocumentMoniker": "Views\\Dashboard\\CoordinatorIndex.cshtml",
@@ -82,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LocalFileStorageService.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Services\\LocalFileStorageService.cs",
               "RelativeDocumentMoniker": "Services\\LocalFileStorageService.cs",
@@ -90,12 +90,11 @@
               "RelativeToolTip": "Services\\LocalFileStorageService.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAAAgwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T10:53:53.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:53:53.031Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "JsonClaimService.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Services\\JsonClaimService.cs",
               "RelativeDocumentMoniker": "Services\\JsonClaimService.cs",
@@ -103,12 +102,11 @@
               "RelativeToolTip": "Services\\JsonClaimService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T10:53:48.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:53:48.601Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IFileStorageService.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Services\\IFileStorageService.cs",
               "RelativeDocumentMoniker": "Services\\IFileStorageService.cs",
@@ -116,12 +114,11 @@
               "RelativeToolTip": "Services\\IFileStorageService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T10:53:46.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:53:46.39Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "IClaimService.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Services\\IClaimService.cs",
               "RelativeDocumentMoniker": "Services\\IClaimService.cs",
@@ -129,12 +126,11 @@
               "RelativeToolTip": "Services\\IClaimService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T10:53:43.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:53:43.538Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
@@ -142,12 +138,11 @@
               "RelativeToolTip": "Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T10:53:39.832Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:53:39.832Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Claim.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Models\\Claim.cs",
               "RelativeDocumentMoniker": "Models\\Claim.cs",
@@ -155,12 +150,11 @@
               "RelativeToolTip": "Models\\Claim.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T10:53:32.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:53:32.358Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -168,12 +162,11 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T10:52:21.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:52:21.678Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
@@ -185,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ClaimsController.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Controllers\\ClaimsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClaimsController.cs",
@@ -197,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
@@ -209,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -221,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -233,19 +226,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 0,
               "Title": "ClaimTest.cs",
               "DocumentMoniker": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS.Tests\\ClaimTest.cs",
               "RelativeDocumentMoniker": "..\\ST10442835_PROG6212_CMCS.Tests\\ClaimTest.cs",
               "ToolTip": "C:\\Users\\zainl\\OneDrive\\Desktop\\ST10442835_PROG6212_CMCS.Tests\\ClaimTest.cs",
               "RelativeToolTip": "..\\ST10442835_PROG6212_CMCS.Tests\\ClaimTest.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwDYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAIwDkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T09:28:45.156Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2025-10-22T09:28:45.156Z",
+              "EditorCaption": ""
             }
           ]
         }
