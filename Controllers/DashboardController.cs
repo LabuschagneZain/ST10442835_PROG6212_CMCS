@@ -1,5 +1,4 @@
-﻿// Controllers/DashboardController.cs
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ST10442835_PROG6212_CMCS.Services;
 using ST10442835_PROG6212_CMCS.Models;
 
@@ -14,7 +13,6 @@ namespace ST10442835_PROG6212_CMCS.Controllers
             _claimService = claimService;
         }
 
-        // Manager dashboard
         public async Task<IActionResult> ManagementIndex()
         {
             try
@@ -29,12 +27,10 @@ namespace ST10442835_PROG6212_CMCS.Controllers
             }
         }
 
-        // Lecturer dashboard
         public async Task<IActionResult> LecturerIndex()
         {
             try
             {
-                // Get lecturer name from session or use default
                 var lecturerName = User.Identity?.Name ??
                                  HttpContext.Session.GetString("Username") ??
                                  "Unknown Lecturer";
@@ -49,13 +45,11 @@ namespace ST10442835_PROG6212_CMCS.Controllers
             }
         }
 
-        // Programme Coordinator dashboard (separate admin view)
         public async Task<IActionResult> CoordinatorIndex()
         {
             try
             {
                 var allClaims = await _claimService.GetAllClaimsAsync();
-                // Filter to show only pending claims for coordinators, or all based on requirement
                 var pendingClaims = allClaims.Where(c => c.Status == "Pending").ToList();
                 return View(pendingClaims);
             }

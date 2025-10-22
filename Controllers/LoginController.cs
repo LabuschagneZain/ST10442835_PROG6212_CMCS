@@ -1,5 +1,4 @@
-﻿// Controllers/LoginController.cs
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 
 namespace ST10442835_PROG6212_CMCS.Controllers
@@ -21,16 +20,14 @@ namespace ST10442835_PROG6212_CMCS.Controllers
                 return View();
             }
 
-            // Simple authentication - only check username, accept any password
             if (username.Equals("lecturer", StringComparison.OrdinalIgnoreCase) ||
                 username.Equals("management", StringComparison.OrdinalIgnoreCase) ||
                 username.Equals("coordinator", StringComparison.OrdinalIgnoreCase))
             {
-                // Store username in session
+
                 HttpContext.Session.SetString("Username", username);
                 HttpContext.Session.SetString("Role", role ?? "lecturer");
 
-                // Redirect based on role
                 if (username.Equals("lecturer", StringComparison.OrdinalIgnoreCase))
                 {
                     return RedirectToAction("LecturerIndex", "Dashboard");

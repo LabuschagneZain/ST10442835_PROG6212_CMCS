@@ -15,14 +15,12 @@ namespace ST10442835_PROG6212_CMCS.Controllers
             _fileStorageService = fileStorageService;
         }
 
-        // POST: Claims/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(string Month, int HoursWorked, double HourlyRate, string Notes, IFormFile DocumentFile)
         {
             try
             {
-                // Manual validation
                 if (string.IsNullOrEmpty(Month) || HoursWorked <= 0 || HourlyRate <= 0)
                 {
                     TempData["ErrorMessage"] = "Please fill in all required fields correctly.";
@@ -34,7 +32,6 @@ namespace ST10442835_PROG6212_CMCS.Controllers
 
                 if (DocumentFile != null && DocumentFile.Length > 0)
                 {
-                    // Validate file type
                     var allowedExtensions = new[] { ".pdf", ".docx", ".xlsx" };
                     var fileExtension = Path.GetExtension(DocumentFile.FileName).ToLower();
                     if (!allowedExtensions.Contains(fileExtension))
@@ -43,7 +40,6 @@ namespace ST10442835_PROG6212_CMCS.Controllers
                         return RedirectToAction("LecturerIndex", "Dashboard");
                     }
 
-                    // Validate file size
                     if (DocumentFile.Length > 5 * 1024 * 1024)
                     {
                         TempData["ErrorMessage"] = "File size cannot exceed 5MB.";
@@ -62,7 +58,6 @@ namespace ST10442835_PROG6212_CMCS.Controllers
                     }
                 }
 
-                // Create a new Claim object for storage
                 var storageClaim = new Claim
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -89,7 +84,6 @@ namespace ST10442835_PROG6212_CMCS.Controllers
             }
         }
 
-        // GET: Claims/ViewDocument/5
         public async Task<IActionResult> ViewDocument(string id)
         {
             if (string.IsNullOrEmpty(id))
