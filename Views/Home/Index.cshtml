@@ -8,6 +8,17 @@
     <style>
         body {
             background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 200px); /* Adjust based on your header/footer height */
         }
 
         .feature-card, .role-card {
@@ -33,45 +44,61 @@
             color: inherit;
             display: block;
         }
+
+        .center-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-    <div class="container py-5">
-        <div class="text-center mb-5">
-            <i class="bi bi-mortarboard-fill text-primary" style="font-size:3rem;"></i>
-            <h1 class="fw-bold mt-2">Contract Monthly Claim System</h1>
-            <p class="text-muted">Streamlined claim submission, review, and approval process for academic institutions</p>
-        </div>
+    <!-- Your shared layout header will be here -->
 
-        <!-- Features -->
-        <div class="row text-center mb-5 g-4">
-            <div class="col-md-4">
-                <div class="feature-card bg-light">
-                    <i class="bi bi-clock-history text-primary"></i>
-                    <h5 class="mt-2">Quick Submission</h5>
-                    <p class="text-muted">Lecturers can submit claims with one-click simplicity</p>
+    <div class="main-content">
+        <div class="center-container">
+            <div class="container py-5">
+                <div class="text-center mb-5">
+                    <i class="bi bi-mortarboard-fill text-primary" style="font-size:3rem;"></i>
+                    <h1 class="fw-bold mt-2">Contract Monthly Claim System</h1>
+                    <p class="text-muted">Streamlined claim submission, review, and approval process for academic institutions</p>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card bg-light">
-                    <i class="bi bi-check2-circle text-success"></i>
-                    <h5 class="mt-2">Transparent Tracking</h5>
-                    <p class="text-muted">Real-time status updates throughout the approval process</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card bg-light">
-                    <i class="bi bi-mortarboard-fill text-warning"></i>
-                    <h5 class="mt-2">Multi-Level Approval</h5>
-                    <p class="text-muted">Coordinated review by Programme Coordinators and Academic Managers</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Login Button -->
-        <div class="text-center">
-            <a href="@Url.Action("Index", "Login")" class="btn btn-primary btn-lg px-5">Login</a>
+                <!-- Features -->
+                <div class="row text-center mb-5 g-4">
+                    <div class="col-md-4">
+                        <div class="feature-card bg-light">
+                            <i class="bi bi-clock-history text-primary"></i>
+                            <h5 class="mt-2">Quick Submission</h5>
+                            <p class="text-muted">Lecturers can submit claims with one-click simplicity</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card bg-light">
+                            <i class="bi bi-check2-circle text-success"></i>
+                            <h5 class="mt-2">Transparent Tracking</h5>
+                            <p class="text-muted">Real-time status updates throughout the approval process</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card bg-light">
+                            <i class="bi bi-mortarboard-fill text-warning"></i>
+                            <h5 class="mt-2">Multi-Level Approval</h5>
+                            <p class="text-muted">Coordinated review by Programme Coordinators and Academic Managers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Login Button - Centered with proper spacing -->
+                <div class="text-center mt-4">
+                    <a href="@Url.Action("Index", "Login")" class="btn btn-primary btn-lg px-5 py-3" style="font-size: 1.1rem;">
+                        Get Started - Login Now
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Your shared layout footer will be here -->
 </body>
 </html>

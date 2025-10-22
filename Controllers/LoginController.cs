@@ -15,16 +15,16 @@ namespace ST10442835_PROG6212_CMCS.Controllers
         [HttpPost]
         public IActionResult Index(string username, string password, string role)
         {
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(username))
             {
-                ViewBag.ErrorMessage = "Username and password cannot be empty.";
+                ViewBag.ErrorMessage = "Username cannot be empty.";
                 return View();
             }
 
-            // Simple authentication - in production, use proper authentication
-            if ((username.Equals("lecturer", StringComparison.OrdinalIgnoreCase) && password == "password") ||
-                (username.Equals("management", StringComparison.OrdinalIgnoreCase) && password == "password") ||
-                (username.Equals("coordinator", StringComparison.OrdinalIgnoreCase) && password == "password"))
+            // Simple authentication - only check username, accept any password
+            if (username.Equals("lecturer", StringComparison.OrdinalIgnoreCase) ||
+                username.Equals("management", StringComparison.OrdinalIgnoreCase) ||
+                username.Equals("coordinator", StringComparison.OrdinalIgnoreCase))
             {
                 // Store username in session
                 HttpContext.Session.SetString("Username", username);
@@ -45,7 +45,7 @@ namespace ST10442835_PROG6212_CMCS.Controllers
                 }
             }
 
-            ViewBag.ErrorMessage = "Invalid username or password. Try 'lecturer', 'coordinator', or 'management' with password 'password'.";
+            ViewBag.ErrorMessage = "Invalid username. Try 'lecturer', 'coordinator', or 'management'. Password can be anything.";
             return View();
         }
 

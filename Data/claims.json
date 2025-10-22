@@ -68,5 +68,33 @@
     "Notes": "ghtrhrehre",
     "DocumentFile": null,
     "TotalAmount": 1300
+  },
+  {
+    "Id": "6e5228d5-a369-4947-9f93-5cfaf2577967",
+    "LecturerName": "lecturer",
+    "Month": "August",
+    "HoursWorked": 44,
+    "HourlyRate": 200,
+    "Status": "Approved",
+    "DocumentUrl": "3bfc18a3-83d9-40f2-b873-bdec16ce2b7f_ABCRetailers - OrderController Code Snapshots.pdf",
+    "DocumentFileName": "ABCRetailers - OrderController Code Snapshots.pdf",
+    "CreatedDate": "2025-10-22T09:56:25.5978255Z",
+    "Notes": "Worked Overtime",
+    "DocumentFile": null,
+    "TotalAmount": 8800
+  },
+  {
+    "Id": "507890c7-4706-48b9-85ae-b7395ec37bd5",
+    "LecturerName": "lecturer",
+    "Month": "August",
+    "HoursWorked": 12,
+    "HourlyRate": 200,
+    "Status": "Rejected",
+    "DocumentUrl": "06050449-b75c-4e99-81f7-0d54461ef0b2_ABCRetailers - OrderController Code Snapshots.pdf",
+    "DocumentFileName": "ABCRetailers - OrderController Code Snapshots.pdf",
+    "CreatedDate": "2025-10-22T10:02:46.986576Z",
+    "Notes": "Worked overtime",
+    "DocumentFile": null,
+    "TotalAmount": 2400
   }
 ]
