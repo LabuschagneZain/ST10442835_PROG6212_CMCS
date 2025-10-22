@@ -17,7 +17,6 @@ namespace ST10442835_PROG6212_CMCS.Services
                 Directory.CreateDirectory(_uploadPath);
             }
 
-            // Generate or use a fixed encryption key (in production, use secure key management)
             var keyString = configuration["EncryptionKey"] ?? "0123456789ABCDEF0123456789ABCDEF";
             _encryptionKey = Encoding.UTF8.GetBytes(keyString.PadRight(32).Substring(0, 32));
         }
@@ -27,13 +26,11 @@ namespace ST10442835_PROG6212_CMCS.Services
             if (file == null || file.Length == 0)
                 throw new ArgumentException("File is empty");
 
-            // Validate file type
             var allowedExtensions = new[] { ".pdf", ".docx", ".xlsx" };
             var fileExtension = Path.GetExtension(file.FileName).ToLower();
             if (!allowedExtensions.Contains(fileExtension))
                 throw new InvalidOperationException("Only PDF, DOCX, and XLSX files are allowed");
 
-            // Validate file size (5MB max)
             if (file.Length > 5 * 1024 * 1024)
                 throw new InvalidOperationException("File size cannot exceed 5MB");
 
@@ -42,13 +39,11 @@ namespace ST10442835_PROG6212_CMCS.Services
 
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                // Encrypt the file
                 using (var aes = Aes.Create())
                 {
                     aes.Key = _encryptionKey;
                     aes.GenerateIV();
 
-                    // Write IV to the beginning of the file
                     await stream.WriteAsync(aes.IV, 0, aes.IV.Length);
 
                     using (var cryptoStream = new CryptoStream(stream, aes.CreateEncryptor(), CryptoStreamMode.Write))
@@ -73,7 +68,6 @@ namespace ST10442835_PROG6212_CMCS.Services
                 {
                     aes.Key = _encryptionKey;
 
-                    // Read IV from the beginning of the file
                     var iv = new byte[16];
                     await stream.ReadAsync(iv, 0, iv.Length);
                     aes.IV = iv;

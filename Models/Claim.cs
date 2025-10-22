@@ -27,7 +27,6 @@ namespace ST10442835_PROG6212_CMCS.Models
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
         public string? Notes { get; set; }
 
-        // For file uploads only; not stored in JSON
         public IFormFile? DocumentFile { get; set; }
 
         public double TotalAmount => HoursWorked * HourlyRate;
